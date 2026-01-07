@@ -1,0 +1,40 @@
+body{
+    background-color: darkblue;
+    background-image: url(Pictures/splatter.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+a:hover {
+    background-color: #ff6b6b;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.container {
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1, h2 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
