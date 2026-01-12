@@ -29,3 +29,20 @@ img {
     object-fit: cover;
     object-position: center 35%;
 }
+
+header {
+    padding: 20px;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
