@@ -1,0 +1,68 @@
+// Color Palette - Cool/Calm Theme
+$primary-color: #121230;
+$secondary-color: #16213e;
+$accent-color: #0f3460;
+$text-light: #e0e0e0;
+
+// Typography
+$font-heading: Arial, Helvetica, sans-serif;
+$font-body: Arial, Helvetica, sans-serif;
+
+// Spacing
+$spacing: 20px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-body;
+    line-height: 1.6;
+    color: $text-light;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 50%, $accent-color 100%);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: blur(1px);
+}
+
+header {
+    text-align: center;
+    padding: $spacing;
+    
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: $spacing;
+        }
+        
+        a {
+            text-decoration: none;
+            color: $text-light;
+            
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+}
