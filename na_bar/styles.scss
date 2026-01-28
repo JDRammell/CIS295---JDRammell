@@ -105,10 +105,13 @@ header {
     background-color: rgba(15, 52, 96, .5);
     border-radius: 12px;
     overflow: hidden;
-    transition: transform .3s ease;
+    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+    cursor: pointer;
 
     &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        filter: brightness(1.1);
     }
 
     img {

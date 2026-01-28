@@ -86,10 +86,13 @@ header nav a:hover {
   background-color: rgba(15, 52, 96, 0.5);
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
 .drink-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
 }
 .drink-card img {
   width: 100%;
