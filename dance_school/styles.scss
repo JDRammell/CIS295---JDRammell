@@ -1,3 +1,13 @@
+/* 20% PROJECT: Smooth Scrolling Effect
+   Added smooth scroll behavior to make navigation feel like flowing movement,
+   fitting the dance studio's theme of grace and fluidity. The smooth transitions
+   between sections create a more elegant user experience. */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 // Color Palette - Warm/Bold Theme
 $primary-color: #d4a13a;
 $secondary-color: #fcb69f;
@@ -76,6 +86,12 @@ header {
                 color: white;
                 background-color: $hover-color;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+            }
+
+            &:focus {
+                outline: 3px solid $hover-color;
+                outline-offset: 2px;
             }
         }
     }
@@ -93,10 +109,17 @@ header {
         font-weight: bold;
         transition: all 0.3s ease;
         display: inline-block;
+        cursor: pointer;
         
         &:hover {
             background-color: $hover-color;
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        
+        &:focus {
+            outline: 3px solid rgba(139, 47, 57, .5);
+            outline-offset: 2px;
+        }
         }
     }
 }
@@ -110,13 +133,15 @@ header {
 }
 
 .showcase {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    margin-bottom: 60px;
     
     h2 {
         text-align: center;
         color: $text-dark;
-        font-size: 36px;
-        margin-bottom: 40px;
+        font-size: 42px;
+        margin-bottom: 50px;
+        font-weight: bold;
     }
 }
 
@@ -181,8 +206,9 @@ header {
 }
 
 .about {
-    padding: 60px 20px 40px;
-    margin-top: 40px;
+    padding: 80px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     border-top: 1px solid rgba(51, 51, 51, 0.2);
     max-width: 1200px;
     margin-left: auto;
@@ -190,14 +216,16 @@ header {
     
     h2 {
         color: $text-dark;
-        margin-bottom: 20px;
-        font-size: 32px;
+        margin-bottom: 30px;
+        font-size: 36px;
+        font-weight: bold;
     }
     
     p {
         color: $text-dark;
-        margin-bottom: 15px;
-        line-height: 1.8;
+        margin-bottom: 25px;
+        line-height: 1.9;
+        font-size: 18px;
     }
 }
 

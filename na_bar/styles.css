@@ -22,7 +22,6 @@ img {
   height: 400px;
   overflow: hidden;
 }
-
 .hero img {
   width: 100%;
   height: 100%;
@@ -31,6 +30,70 @@ img {
   -o-object-position: center 40%;
      object-position: center 40%;
   filter: blur(1px);
+}
+.hero h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 48px;
+  text-align: center;
+  width: 90%;
+  text-shadow: 3px 3px 12px rgb(0, 0, 0);
+  margin: 0;
+}
+.hero p {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+.hero button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #06656a;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero button:hover {
+  background-color: rgb(8.7321428571, 146.9910714286, 154.2678571429);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+button, .btn {
+  background-color: #06656a;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+button:hover, .btn:hover {
+  background-color: rgb(8.7321428571, 146.9910714286, 154.2678571429);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+button:focus, .btn:focus {
+  outline: 3px solid rgba(6, 101, 106, 0.5);
+  outline-offset: 2px;
 }
 
 header {
@@ -55,6 +118,10 @@ header nav a:hover {
   background-color: #06656a;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+header nav a:focus {
+  outline: 3px solid #06656a;
+  outline-offset: 2px;
+}
 
 .logo-center img {
   width: 200px;
@@ -65,13 +132,15 @@ header nav a:hover {
 }
 
 .showcase {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  margin-bottom: 60px;
 }
 .showcase h2 {
   text-align: center;
   color: #e0e0e0;
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: 42px;
+  margin-bottom: 50px;
+  font-weight: bold;
 }
 
 .drink-grid {
@@ -112,8 +181,9 @@ header nav a:hover {
 }
 
 .about {
-  padding: 60px 20px 40px;
-  margin-top: 40px;
+  padding: 80px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   border-top: 1px solid rgba(224, 224, 224, 0.2);
   max-width: 1200px;
   margin-left: auto;
@@ -121,13 +191,15 @@ header nav a:hover {
 }
 .about h2 {
   color: #e0e0e0;
-  margin-bottom: 20px;
-  font-size: 32px;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: bold;
 }
 .about p {
   color: #e0e0e0;
-  margin-bottom: 15px;
-  line-height: 1.8;
+  margin-bottom: 25px;
+  line-height: 1.9;
+  font-size: 18px;
 }
 
 footer {

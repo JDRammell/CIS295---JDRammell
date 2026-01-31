@@ -1,3 +1,11 @@
+/* 20% PROJECT: Smooth Scrolling Effect
+   Added smooth scroll behavior to make navigation feel like flowing movement,
+   fitting the dance studio's theme of grace and fluidity. The smooth transitions
+   between sections create a more elegant user experience. */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -61,6 +69,11 @@ header nav a:hover {
   color: white;
   background-color: #b61e1e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+header nav a:focus {
+  outline: 3px solid #b61e1e;
+  outline-offset: 2px;
 }
 
 .cta-button {
@@ -75,10 +88,16 @@ header nav a:hover {
   font-weight: bold;
   transition: all 0.3s ease;
   display: inline-block;
+  cursor: pointer;
 }
 .cta-button .book-btn:hover {
   background-color: #b61e1e;
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.cta-button .book-btn:hover:focus {
+  outline: 3px solid rgba(139, 47, 57, 0.5);
+  outline-offset: 2px;
 }
 
 .logo img {
@@ -90,13 +109,15 @@ header nav a:hover {
 }
 
 .showcase {
-  padding: 60px 20px;
+  padding: 80px 20px;
+  margin-bottom: 60px;
 }
 .showcase h2 {
   text-align: center;
   color: #333333;
-  font-size: 36px;
-  margin-bottom: 40px;
+  font-size: 42px;
+  margin-bottom: 50px;
+  font-weight: bold;
 }
 
 .dance-grid {
@@ -154,8 +175,9 @@ header nav a:hover {
 }
 
 .about {
-  padding: 60px 20px 40px;
-  margin-top: 40px;
+  padding: 80px 40px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   border-top: 1px solid rgba(51, 51, 51, 0.2);
   max-width: 1200px;
   margin-left: auto;
@@ -163,13 +185,15 @@ header nav a:hover {
 }
 .about h2 {
   color: #333333;
-  margin-bottom: 20px;
-  font-size: 32px;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: bold;
 }
 .about p {
   color: #333333;
-  margin-bottom: 15px;
-  line-height: 1.8;
+  margin-bottom: 25px;
+  line-height: 1.9;
+  font-size: 18px;
 }
 
 footer {
