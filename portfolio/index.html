@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Rammell | Frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="nav-logo">
+                    <img src="LOGO.png" alt="JD Rammell Logo">
+                </a>
+                <span class="nav-subtitle">Frontend Developer</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#">My Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-cta">Hire Me</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title glitch" data-text="I. AM. JD. NICE. TO. MEET. YOU.">I. AM. JD. NICE. TO. MEET. YOU.</h1>
+                <p class="hero-tagline">Where Creativity Meets Code</p>
+                <a href="#" class="btn-primary">See My Work</a>
+            </div>
+            <div class="hero-logo">
+                <img src="coding-pic.jpg" alt="Coding Illustration">
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="about-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>Technology doesn't have to be boring, and I'm here to prove it.</p>
+            
+                    <p>I bring professionalism with a generous dose of personality to web development. With a lifelong passion for computers and a genuine love for discovering new ways to solve problems, I create digital experiences that are technically excellent and creatively bold.</p>
+            
+                    <p>My toolkit includes responsive design, brand identity work, and clean, accessible code. My inspiration? Everything from retro video games to cutting-edge sci-fi. The result? Websites that work beautifully and feel alive.</p>
+                </div>
+            </div>
+        </section>   
+
+        <section id="services" class="services">
+            <h2 class="section-title">What I Do</h2>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Creative Web Design</h3>
+                    <p>Crafting visually stunning, user-focused websites that make an impact and tell your story.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📱</span>
+                    <h3>Responsive Development</h3>
+                    <p>Building websites that work flawlessly across all devices, from mobile to desktop.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">✨</span>
+                    <h3>Brand Identity & Styling</h3>
+                    <p>Developing cohesive visual systems that reflect your unique brand personality.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="section-title">Let's Connect!</h2>
+            <p class="contact-intro">Ready to bring your project to life? Get in touch.</p>
+             <div class="social-links">
+                <a href="#" aria-label="GitHub" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" aria-label="Email" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 JD Rammell. Built with Creativity and Code</p>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    🚀
+    </button>
+
+    <script>
+    // Scroll to top functionality
+    const scrollBtn = document.getElementById('scrollToTop');
+    
+    // Show button when user scrolls down
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+    
+    // Smooth scroll to top when clicked
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+    
+</body>
+</html>

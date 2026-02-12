@@ -176,6 +176,9 @@ header {
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
+    container-type: inline-size;
+    container-name: drink-grid;
+
 }
 
 .drink-card {
@@ -184,6 +187,9 @@ header {
     overflow: hidden;
     transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
     cursor: pointer;
+    animation: fade-slide-up linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
 
     &:hover {
         transform: translateY(-5px) scale(1.02);
@@ -201,12 +207,73 @@ header {
         color: $text-light;
         padding: 20px 20px 10px;
         font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        line-height: 1.3;
+        letter-spacing: .5px;
     }
 
     p {
         color: $text-light;
         padding: 0 20px 20px;
-        line-height: 1.6;
+        line-height: 1.7;
+        letter-spacing: .3px;
+        font-size: 16px;
+    }
+}
+
+
+@container drink-grid (max-width: 300px) {
+    .drink-card {
+        h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        img {
+            height: 250px !important;
+        }
+    }
+}
+
+@container drink-grid (min-width: 301px) and (max-width: 500px) {
+    .drink-card {
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        img {
+            height: 350px !important;
+        }
+    }
+}
+
+@container drink-grid (min-width: 501px) {
+    .drink-card {
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        img {
+            height: 400px !important;
+        }
     }
 }
 
@@ -243,10 +310,8 @@ footer {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
+        flex-direction: column;
+        gap: 10px;
         
         p {
             margin: 0;
@@ -258,8 +323,52 @@ footer {
             font-size: 12px;
             opacity: 0.6;
         }
+
+        .tech-credit {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.7;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(224, 224, 224, 0.2);
+        }
     }
 }
+
+@keyframes fade-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Media Queries - Mobile Responsive */
 
