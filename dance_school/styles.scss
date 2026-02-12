@@ -286,27 +286,29 @@ footer {
     }
 }
 
-.dance-card:has(:hover) {
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
-    border: 3px solid $primary-color;
-    
-    img {
-        filter: brightness(0.5);
-    }
-    
-    .card-content {
-        background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8));
+@supports selector(:has(*)) {
+    .dance-card:has(:hover) {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+        border: 3px solid $primary-color;
         
-        h3 {
-            color: $primary-color;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
-            transform: scale(1.05);
-            letter-spacing: 1.5px;
-            transition: all .3s ease;
+        img {
+            filter: brightness(0.5);
         }
         
-        p {
-            color: white;
+        .card-content {
+            background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.8));
+            
+            h3 {
+                color: $primary-color;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+                transform: scale(1.05);
+                letter-spacing: 1.5px;
+                transition: all 0.3s ease;
+            }
+            
+            p {
+                color: white;
+            }
         }
     }
 }

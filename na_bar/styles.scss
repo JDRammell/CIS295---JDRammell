@@ -176,9 +176,11 @@ header {
     gap: 30px;
     max-width: 900px;
     margin: 0 auto;
-    container-type: inline-size;
-    container-name: drink-grid;
 
+    @supports (container-type: inline-size) {
+        container-type: inline-size;
+        container-name: drink-grid;
+    }
 }
 
 .drink-card {
@@ -187,9 +189,13 @@ header {
     overflow: hidden;
     transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
     cursor: pointer;
+
+@supports (animation-timeline:view()) {
     animation: fade-slide-up linear;
     animation-timeline: view();
     animation-range: entry 0% cover 30%;
+    }
+    
 
     &:hover {
         transform: translateY(-5px) scale(1.02);
