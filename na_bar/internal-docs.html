@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Docs: Scroll Driven Animations</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #121230 0%, #0f3460 50%, #06686a 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(18, 18, 48, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            color: #06686a;
+            font-size: 36px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #06686a;
+            padding-bottom: 15px;
+        }
+        
+        .subtitle {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #0f3460;
+            font-size: 28px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #06686a, transparent);
+            padding: 10px 15px;
+            border-left: 4px solid #06686a;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        code {
+            background: #1a1a3a;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background: #0a0a1a;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid #06686a;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #00ff88;
+            display: block;
+        }
+        
+        .warning {
+            background: rgba(255, 100, 100, 0.1);
+            border-left: 4px solid #ff6464;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning h3 {
+            color: #ff6464;
+            margin-bottom: 10px;
+        }
+        
+        .demo-section {
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(6, 104, 106, 0.1);
+            border-radius: 10px;
+            border: 2px dashed #06686a;
+        }
+        
+        .demo-box {
+            background: linear-gradient(135deg, #0f3460, #06686a);
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            
+            /* Scroll-driven animation */
+            animation: fade-slide-up linear;
+            animation-timeline: view();
+            animation-range: entry 0% cover 40%;
+        }
+        
+        @keyframes fade-slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        a {
+            color: #00ff88;
+            text-decoration: none;
+            border-bottom: 1px dashed #00ff88;
+        }
+        
+        a:hover {
+            color: #06686a;
+            border-bottom-color: #06686a;
+        }
+        
+        .resource-link {
+            background: rgba(6, 104, 106, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 4px solid #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Scroll-Driven Animations</h1>
+        <p class="subtitle">Internal Documentation for Junior Developers</p>
+        
+        <h2>📖 What & Why</h2>
+        <p>
+            <strong>Scroll-driven animations</strong> are a modern CSS feature that allows elements to animate based on scroll position, rather than time. Instead of using JavaScript to detect scroll events and trigger animations manually, we can now use pure CSS with the <code>animation-timeline: view()</code> property.
+        </p>
+        <p>
+            <strong>Why use this instead of the old way?</strong> Previously, we'd write JavaScript like this:
+        </p>
+        <pre><code>// Old way: JavaScript scroll listeners (performance issues!)
+window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.card');
+    elements.forEach(el => {
+        if (isInViewport(el)) {
+            el.classList.add('visible');
+        }
+    });
+});</code></pre>
+        
+        <p>
+            This approach has problems: it runs on every scroll event (causing performance issues), requires extra JavaScript, and is harder to maintain. The new CSS approach is simpler and eliminates the need for scroll event listeners entirely.
+        </p>
+        
+        <h2>💻 The Code</h2>
+        <p>Here's how to implement scroll-driven animations in pure CSS:</p>
+        
+        <pre><code>/* Step 1: Define your animation keyframes */
+@keyframes fade-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Step 2: Apply to your element */
+.card {
+    animation: fade-slide-up linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}</code></pre>
+        
+        <p><strong>What each property does:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 20px;">
+            <li><code>animation: fade-slide-up linear;</code>  Uses your keyframes with linear timing</li>
+            <li><code>animation-timeline: view();</code> THE KEY PROPERTY | links animation to scroll position</li>
+            <li><code>animation-range: entry 0% cover 40%;</code>  Controls when animation happens (starts when element enters viewport, completes at 40% visibility)</li>
+        </ul>
+        
+        <div class="warning">
+            <h3>⚠️ Gotchas & Browser Support</h3>
+            <p><strong>Browser Support:</strong> This feature is cutting-edge! As of 2024, it's supported in Chrome 115+, Edge 115+, and Safari 17.5+. Firefox support is in progress.</p>
+            <p><strong>Always include a fallback:</strong></p>
+            <pre><code>/* Ensure elements are visible by default */
+.card {
+    opacity: 1;
+}
+
+/* Only apply scroll animation if supported */
+@supports (animation-timeline: view()) {
+    .card {
+        animation: fade-slide-up linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+}</code></pre>
+            <p><strong>Common mistake:</strong> Forgetting the <code>animation-range</code> property. Without it, the animation timing won't work as expected!</p>
+        </div>
+        
+        <h2>🎨 Live Demo</h2>
+        <div class="demo-section">
+            <p><strong>Scroll down slowly to see the boxes fade in:</strong></p>
+            
+            <div class="demo-box">Box 1 - Fades in as you scroll</div>
+            <div class="demo-box">Box 2 - Each animates independently</div>
+            <div class="demo-box">Box 3 - Pure CSS, no JavaScript!</div>
+            <div class="demo-box">Box 4 - Smooth and performant</div>
+        </div>
+        
+        <div class="resource-link">
+            <h2>📚 Learn More</h2>
+            <p>This technique was inspired by Smashing Magazine's coverage of modern scroll-driven animations:</p>
+            <p><a href="https://www.smashingmagazine.com/2024/12/introduction-css-scroll-driven-animations/" target="_blank">Smashing Magazine - CSS Scroll-Driven Animations</a></p>
+        </div>
+        
+        <p style="margin-top: 40px; text-align: center; color: #666;">
+            <small>Created for The Buzz Kill internal training • 2026</small>
+        </p>
+    </div>
+    
+</body>
+</html>
